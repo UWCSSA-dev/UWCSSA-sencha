@@ -3,9 +3,11 @@
 // This script has to work together with Sencha Touch framework
 Ext.setup({
 	icon: 'icon.png',
-	tabletStartupScreen: 'tablet_startup.png',
-	phoneStartupScreen: 'phone_startup.png',
-	glossOnIcon: false,
+    //TODO: refine start up image for phone and iPad(tablet)
+	tabletStartupScreen: 'resources/images/tablet_startup.png',
+	phoneStartupScreen: 'resources/images/phone_startup.png',
+    //make icon nicer
+	glossOnIcon: true,
 	onReady: function() {
 		// ====================================================================
 		// Cards implementation
@@ -101,7 +103,8 @@ Ext.setup({
 			fullscreen: true,
 			ui: 'light',
 			cardSwitchAnimation: {
-				type: 'slide',
+            //try out diff animation: cube, fade, flip, pop, slide, wipe
+				type: 'cube',
 				cover: false
 			},
 			// items default attributes
