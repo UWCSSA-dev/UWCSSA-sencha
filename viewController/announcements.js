@@ -64,16 +64,42 @@ AnnouncementsVC = {
 			indexBar: false,
 			store: announceStore
 		});	
+		
+		var topChanger = new Ext.Carousel({
+            items: [
+                {cls: "head-1 head"},
+                {cls: "head-2 head"},
+                {cls: "head-3 head"},
+            ]
+        });
+
+        var centerChanger = new Ext.Carousel({
+            items: [
+                {cls: "torso-1 torso"},
+                {cls: "torso-2 torso"},
+                {cls: "torso-3 torso"},
+            ]
+        });
+
+        var bottomChanger = new Ext.Carousel({
+            items: [
+                {cls: "legs-1 legs"},
+                {cls: "legs-2 legs"},
+                {cls: "legs-3 legs"},
+            ]
+        });
+
 		// Card1 Panel
 		var announce = new Ext.Panel({
 			title: '公告栏',
 			cls: 'card1',
 			iconCls: 'favorites',
-			layout: {
-				type: 'auto', 
-				align: 'stretch'
-			},
-			dockedItems: [announceToolbar, announceList],
+            layout: {
+                type: 'vbox',
+                align: 'stretch'
+            },
+            defaults: {flex: 1},
+            items: [topChanger, centerChanger, bottomChanger],
 		});
 		// Card1 implementation end
 		return announce;
